@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
+@CrossOrigin("http://localhost:3000")
 public class CustomerController {
 
     @Autowired
@@ -32,7 +33,7 @@ public class CustomerController {
         return ResponseEntity.ok().body(customer);
     }
 
-    @PostMapping("/customers")
+    @PostMapping("/addCustomer")
     public Customer createCustomer(@RequestBody Customer customer) {
 
         return customerRepository.save(customer);
